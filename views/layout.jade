@@ -1,0 +1,33 @@
+!!! 5
+html(lang="en")
+  head
+    title Express Coffee with CoffeeKup
+    meta(charset='utf-8')
+    - if(typeof(title) != 'undefined')
+      title #{title} | My Site
+    - if(typeof(description) != 'undefined')
+      meta(name='description', content=#{description})
+    - if(typeof(canonical) != 'undefined')
+      link(rel='canonical', href=#{canonical})
+
+    link(rel='icon', href='/favicon.png')
+    link(rel='stylesheet', href='/stylesheets/app.css')
+
+    script(src='/javascripts/jquery-1.6.4.js')
+    script(src='/javascripts/app.js')
+    
+  body
+      header
+        a(href='/', title='Home') Home
+
+        nav
+          ul
+            - each item in ['About', 'Pricing', 'Contact']
+              li
+                a(href="/#{item.toLowerCase()}", title=item)= item
+
+      div(id='content')!= body
+
+      footer
+        p 
+          a(href='/privacy') Privacy Policy

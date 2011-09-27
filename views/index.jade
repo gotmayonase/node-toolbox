@@ -1,0 +1,15 @@
+h1 CoffeeScript Rocks!!
+
+ul
+  - each category in categories
+    li
+      a(href="/categories/#{category._id}")= category.name
+      - if(category.child_categories.length)
+        ul
+          - each child in category.child_categories
+            li= child.name
+      - if(category.node_modules.length)
+        ul
+          - each node_module in category.node_modules
+            li= node_module.name
+        

@@ -1,0 +1,12 @@
+header, nav, section, article, aside, footer  {
+  display: block;}
+
+nav  li {
+  display: inline;
+  margin: 10px;}
+
+.sub {
+  float: right;}
+
+#content {
+  margin-left: 120px;}
